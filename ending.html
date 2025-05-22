@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/img/favicon.svg" type="image/svg">
+  <title>GeoGames - Gameplay</title>
+  <meta name="description" content="Geogames">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="ending-screen">
+  <img src="img/logo.svg" alt="GeoGames" id="logo">
+
+  <div id="recap-global-game">
+    <div id="score-final">
+      <span>Score final</span>
+      <div class="result">
+        <span id="score-final__count" class="result__count">0</span>/<span id="score-final__total" class="result__total">0</span>
+      </div>
+    </div>
+
+    <div id="games-found">
+      <span>Jeux trouvés</span>
+      <div class="result">
+        <span id="games-found__count" class="result__count">00</span>/<span id="games-found__total" class="result__total">00</span>
+      </div>
+    </div>
+
+    <div id="timeline">
+    </div>
+  </div>
+
+  <a href="index.html" id="back-home">Retour à l'accueil</a>
+
+  <script type="module" src="ending.js"></script>
+</body>
+
+</html>

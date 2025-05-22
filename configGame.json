@@ -1,0 +1,353 @@
+{
+    "name": "GeoGames",
+    "author": "VanSkull",
+    "version": "0.1.0",
+    "description": "GeoGames Beta - First game default - Bonus rounds activated - 18 rounds",
+    "rounds" : [
+        {
+            "game": "Valorant",
+            "level": 1,
+            "acceptTerms": [
+                "VALORANT"
+            ],
+            "posterImg": "/img/poster/1.jpg",
+            "mapImg": "/img/map/1.jpg",
+            "viewImg": "/img/view/1.jpg",
+            "mapLocation": {
+                "x": "49.3%",
+                "y": "15%" 
+            },
+            "mapArea": 50400,
+            "bonus": null
+        },
+        {
+            "game": "Doom",
+            "level": 1,
+            "acceptTerms": [
+                "DOOM"
+            ],
+            "posterImg": "/img/poster/2.jpg",
+            "mapImg": "/img/map/2.jpg",
+            "viewImg": "/img/view/2.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Palworld",
+            "level": 1,
+            "acceptTerms": [
+                "PALWORLD"
+            ],
+            "posterImg": "/img/poster/3.jpg",
+            "mapImg": "/img/map/3.jpg",
+            "viewImg": "/img/view/3.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "The Witcher 3",
+            "level": 1,
+            "acceptTerms": [
+                "THE WITCHER 3",
+                "WITCHER 3"
+            ],
+            "posterImg": "/img/poster/4.jpg",
+            "mapImg": "/img/map/4.jpg",
+            "viewImg": "/img/view/4.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Cyberpunk 2077",
+            "level": 1,
+            "acceptTerms": [
+                "CYBERPUNK 2077",
+                "CYBERPUNK"
+            ],
+            "posterImg": "/img/poster/5.jpg",
+            "mapImg": "/img/map/5.jpg",
+            "viewImg": "/img/view/5.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Valheim",
+            "level": 1,
+            "acceptTerms": [
+                "VALHEIM"
+            ],
+            "posterImg": "/img/poster/6.jpg",
+            "mapImg": "/img/map/6.jpg",
+            "viewImg": "/img/view/6.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": {
+                "doublePoints": true,
+                "noMap": true,
+                "fastTime": true,
+                "oneTry": false,
+                "noZoom": false,
+                "viewLock": false
+            }
+        },
+        {
+            "game": "PlayerUnknown's Battlegrounds",
+            "level": 2,
+            "acceptTerms": [
+                "PUBG",
+                "PUBG :BATTLEGROUNDS",
+                "PUBG: BATTLEGROUNDS",
+                "PUBG:BATTLEGROUNDS",
+                "PUBG : BATTLEGROUNDS",
+                "PLAYER UNKNOWN BATTLEGROUNDS",
+                "PLAYERUNKNOWN BATTLEGROUNDS",
+                "PLAYER UNKNOWN'S BATTLEGROUNDS",
+                "PLAYERUNKNOWN'S BATTLEGROUNDS"
+            ],
+            "posterImg": "/img/poster/7.jpg",
+            "mapImg": "/img/map/7.jpg",
+            "viewImg": "/img/view/7.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "The Witness",
+            "level": 2,
+            "acceptTerms": [
+                "THE WITNESS"
+            ],
+            "posterImg": "/img/poster/8.jpg",
+            "mapImg": "/img/map/8.jpg",
+            "viewImg": "/img/view/8.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Fallout 4",
+            "level": 2,
+            "acceptTerms": [
+                "FALLOUT 4"
+            ],
+            "posterImg": "/img/poster/9.jpg",
+            "mapImg": "/img/map/9.jpg",
+            "viewImg": "/img/view/9.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Dark Souls",
+            "level": 2,
+            "acceptTerms": [
+                "DARK SOULS"
+            ],
+            "posterImg": "/img/poster/10.jpg",
+            "mapImg": "/img/map/10.jpg",
+            "viewImg": "/img/view/10.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "The Elder Scrolls V : Skyrim",
+            "level": 2,
+            "acceptTerms": [
+                "SKYRIM",
+                "THE ELDER SCROLLS V: SKYRIM",
+                "THE ELDER SCROLLS V :SKYRIM",
+                "THE ELDER SCROLLS V : SKYRIM",
+                "THE ELDER SCROLLS V:SKYRIM",
+                "THE ELDER SCROLLS V SKYRIM",
+                "THE ELDER SCROLLS V",
+                "THE ELDER SCROLLS 5",
+                "TES V",
+                "TES 5"
+            ],
+            "posterImg": "/img/poster/11.jpg",
+            "mapImg": "/img/map/11.jpg",
+            "viewImg": "/img/view/11.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Bioshock",
+            "level": 2,
+            "acceptTerms": [
+                "BIOSHOCK"
+            ],
+            "posterImg": "/img/poster/12.jpg",
+            "mapImg": "/img/map/12.jpg",
+            "viewImg": "/img/view/12.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": {
+                "doublePoints": true,
+                "noMap": true,
+                "fastTime": true,
+                "oneTry": false,
+                "noZoom": false,
+                "viewLock": false
+            }
+        },
+        {
+            "game": "Among Us",
+            "level": 3,
+            "acceptTerms": [
+                "AMONG US"
+            ],
+            "posterImg": "/img/poster/13.jpg",
+            "mapImg": "/img/map/13.jpg",
+            "viewImg": "/img/view/13.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Lethal Company",
+            "level": 3,
+            "acceptTerms": [
+                "LETHAL COMPANY"
+            ],
+            "posterImg": "/img/poster/14.jpg",
+            "mapImg": "/img/map/14.jpg",
+            "viewImg": "/img/view/14.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "GTA V",
+            "level": 3,
+            "acceptTerms": [
+                "GTA V",
+                "GTA 5",
+                "GRAND THEFT AUTO V",
+                "GRAND THEFT AUTO 5"
+            ],
+            "posterImg": "/img/poster/15.jpg",
+            "mapImg": "/img/map/15.jpg",
+            "viewImg": "/img/view/15.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Supraland",
+            "level": 3,
+            "acceptTerms": [
+                "SUPRALAND"
+            ],
+            "posterImg": "/img/poster/16.jpg",
+            "mapImg": "/img/map/16.jpg",
+            "viewImg": "/img/view/16.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Counter Strike 2",
+            "level": 3,
+            "acceptTerms": [
+                "COUNTER STRIKE",
+                "COUNTER STRIKE 2",
+                "CSGO",
+                "CS",
+                "CS2",
+                "CS 2",
+                "COUNTER STRIKE GLOBAL OFFENSIVE",
+                "COUNTER STRIKE: GLOBAL OFFENSIVE",
+                "COUNTER STRIKE :GLOBAL OFFENSIVE",
+                "COUNTER STRIKE : GLOBAL OFFENSIVE",
+                "COUNTER STRIKE:GLOBAL OFFENSIVE"
+            ],
+            "posterImg": "/img/poster/17.jpg",
+            "mapImg": "/img/map/17.jpg",
+            "viewImg": "/img/view/17.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": null
+        },
+        {
+            "game": "Metal : Hellsinger",
+            "level": 3,
+            "acceptTerms": [
+                "METAL HELLSINGER",
+                "METAL: HELLSINGER",
+                "METAL :HELLSINGER",
+                "METAL:HELLSINGER",
+                "METAL : HELLSINGER"
+            ],
+            "posterImg": "/img/poster/18.jpg",
+            "mapImg": "/img/map/18.jpg",
+            "viewImg": "/img/view/18.jpg",
+            "mapLocation": {
+                "x": 165.44,
+                "y": 215.12 
+            },
+            "mapArea": 62500,
+            "bonus": {
+                "doublePoints": true,
+                "noMap": true,
+                "fastTime": true,
+                "oneTry": false,
+                "noZoom": false,
+                "viewLock": false
+            }
+        }
+    ]
+}

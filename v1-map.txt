@@ -1,0 +1,141 @@
+// HTML
+<div id="map">
+  <div id="map__container">
+    <!-- <div id="map__content"> -->
+      <img id="map__image" src="/img/map-game.jpg" alt="Map">
+      <div id="ping"></div>
+    <!-- </div> -->
+  </div>
+  <button id="map__submit">Valider</button>
+</div>
+
+// SCSS
+#map {
+  // display: none;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 500px;
+  opacity: 0.5;
+  transition: 0.3s ease-out;
+  transition-property: width, opacity;
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border: 0.25rem solid #fff;
+    border-bottom: none;
+    transition: 0.3s ease-out;
+    overflow: hidden;
+    // #map__content{
+      #map__image{
+        pointer-events: none;
+      }
+      #ping{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+        display: none;
+        pointer-events: none;
+      }
+    // }
+  }
+  &__submit {
+    display: block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0.25rem solid #fff;
+    border-block-width: 0.25rem 0;
+    padding: 0 1.5rem 0;
+    color: #fff;
+    font-family: $font-jomhuria;
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+    transition-property: width, height, background-color, border-block-width;
+    &:hover {
+      background-color: rgba(255, 0, 0, 0.5);
+    }
+  }
+  &:hover {
+    opacity: 1;
+    width: 760px;
+    #map__container {
+      height: 475px;
+    }
+    #map__submit {
+      height: 4.5rem;
+      padding: 0.375rem 1.5rem 0;
+      border-block-width: 0.25rem;
+    }
+  }
+}
+
+// JS
+const mapContainer = document.getElementById('map__container');
+const mapImage = document.getElementById('map__image');
+const mapPing = document.getElementById('ping');
+const mapSubmit = document.getElementById('map__submit');
+let isDragging = false;
+let previousX = 0;
+let previousY = 0;
+
+mapContainer.addEventListener('mousedown', function (event) {
+  isDragging = true;
+  var offsetX = event.clientX - mapContainer.offsetLeft + mapContainer.scrollLeft;
+  var offsetY = event.clientY - mapContainer.offsetTop + mapContainer.scrollTop;
+  previousX = offsetX;
+  previousY = offsetY;
+  mapPing.style.left = offsetX + 'px';
+  mapPing.style.top = offsetY + 'px';
+  mapPing.style.display = 'block';
+});
+
+mapContainer.addEventListener('mousemove', function (event) {
+  if (isDragging) {
+      var offsetX = event.clientX - mapContainer.offsetLeft + mapContainer.scrollLeft;
+      var offsetY = event.clientY - mapContainer.offsetTop + mapContainer.scrollTop;
+      var deltaX = offsetX - previousX;
+      var deltaY = offsetY - previousY;
+      mapContainer.scrollLeft -= deltaX;
+      mapContainer.scrollTop -= deltaY;
+      mapPing.style.left = (parseInt(mapPing.style.left) - deltaX) + 'px';
+      mapPing.style.top = (parseInt(mapPing.style.top) - deltaY) + 'px';
+      previousX = offsetX;
+      previousY = offsetY;
+  }
+});
+
+mapContainer.addEventListener('mouseup', function () {
+  isDragging = false;
+});
+
+mapContainer.addEventListener('wheel', function (event) {
+  event.preventDefault();
+  var zoomIntensity = 0.1; // Intensité du zoom
+  var zoomDirection = event.deltaY > 0 ? -1 : 1; // Direction du zoom
+  var zoomLevel = parseFloat(mapImage.style.transform.replace('scale(', '').replace(')', '')) || 1;
+  var newZoomLevel = zoomLevel + zoomIntensity * zoomDirection;
+  mapImage.style.transform = 'scale(' + newZoomLevel + ')';
+});
+
+mapSubmit.addEventListener('click', function () {
+  var mapRect = mapContainer.getBoundingClientRect();
+  var pingRect = mapPing.getBoundingClientRect();
+  var offsetX = pingRect.left - mapRect.left + (pingRect.width / 2);
+  var offsetY = pingRect.top - mapRect.top + (pingRect.height / 2);
+  var xPercentage = (offsetX / mapRect.width) * 100;
+  var yPercentage = (offsetY / mapRect.height) * 100;
+  var coordinates = {
+      x: xPercentage,
+      y: yPercentage
+  };
+  console.log('Coordinates:', coordinates);
+  // Vous pouvez utiliser les coordonnées ici pour vos traitements supplémentaires
+});

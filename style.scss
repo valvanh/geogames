@@ -1,0 +1,862 @@
+// Import fonts
+@font-face {
+  font-family: "Sansation Light";
+  src: url('/fonts/Sansation_Light.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+
+// Variables
+// Fonts
+$font-jomhuria: "Jomhuria", serif;
+$font-sansation-light: "Sansation Light", sans-serif;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(rgb(11, 1, 31), rgb(11, 1, 31));
+  /* background-image: radial-gradient(rgba(47, 4, 4, 0.4), rgba(47, 4, 4, 0)), linear-gradient(rgb(11, 1, 31), rgb(11, 1, 31)); */
+  background-repeat: no-repeat;
+  /* background-position: bottom 30vh right 20vw, center center; */
+
+  // Homepage
+  &.homepage {
+    cursor: url('data:image/svg+xml,<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1154 8.92489L17.2673 9.68952C15.6189 10.3716 14.0726 11.383 12.7277 12.7279C11.3828 14.0728 10.3713 15.6191 9.68927 17.2676L8.92465 19.1156L5.22852 17.5864L5.99314 15.7383C6.87269 13.6125 8.17606 11.6227 9.89925 9.8995C11.6224 8.17631 13.6123 6.87293 15.7381 5.99339L17.5861 5.22876L19.1154 8.92489ZM27.6682 5.22876L29.5163 5.99339C31.6421 6.87293 33.6319 8.17631 35.3551 9.8995C37.0783 11.6227 38.3817 13.6125 39.2612 15.7383L40.0258 17.5864L36.3297 19.1156L35.5651 17.2676C34.883 15.6191 33.8716 14.0728 32.5267 12.7279C31.1818 11.383 29.6355 10.3716 27.987 9.68952L26.139 8.92489L27.6682 5.22876ZM8.92465 26.1392L9.68927 27.9873C10.3713 29.6357 11.3828 31.182 12.7277 32.5269C14.0726 33.8718 15.6189 34.8833 17.2673 35.5653L19.1154 36.3299L17.5861 40.0261L15.7381 39.2615C13.6123 38.3819 11.6224 37.0785 9.89925 35.3553C8.17606 33.6321 6.87269 31.6423 5.99314 29.5165L5.22852 27.6684L8.92465 26.1392ZM40.0258 27.6684L39.2612 29.5165C38.3817 31.6423 37.0783 33.6321 35.3551 35.3553C33.6319 37.0785 31.6421 38.3819 29.5163 39.2615L27.6682 40.0261L26.139 36.3299L27.987 35.5653C29.6355 34.8833 31.1818 33.8718 32.5267 32.5269C33.8716 31.182 34.883 29.6357 35.5651 27.9873L36.3297 26.1392L40.0258 27.6684Z" fill="white"/><circle cx="22.6274" cy="22.6274" r="5" fill="white"/></svg>') 23 23, default;
+    padding: 2rem;
+    padding-top: clamp(2rem, 9vh, 7rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+
+    #logo {
+      width: 305px;
+    }
+
+    #main-menu {
+      ul {
+        display: grid;
+        gap: 1.5rem;
+
+        li {
+          a {
+            // cursor: pointer;
+            cursor: url('data:image/svg+xml,<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1154 8.92489L17.2673 9.68952C15.6189 10.3716 14.0726 11.383 12.7277 12.7279C11.3828 14.0728 10.3713 15.6191 9.68927 17.2676L8.92465 19.1156L5.22852 17.5864L5.99314 15.7383C6.87269 13.6125 8.17606 11.6227 9.89925 9.8995C11.6224 8.17631 13.6123 6.87293 15.7381 5.99339L17.5861 5.22876L19.1154 8.92489ZM27.6682 5.22876L29.5163 5.99339C31.6421 6.87293 33.6319 8.17631 35.3551 9.8995C37.0783 11.6227 38.3817 13.6125 39.2612 15.7383L40.0258 17.5864L36.3297 19.1156L35.5651 17.2676C34.883 15.6191 33.8716 14.0728 32.5267 12.7279C31.1818 11.383 29.6355 10.3716 27.987 9.68952L26.139 8.92489L27.6682 5.22876ZM8.92465 26.1392L9.68927 27.9873C10.3713 29.6357 11.3828 31.182 12.7277 32.5269C14.0726 33.8718 15.6189 34.8833 17.2673 35.5653L19.1154 36.3299L17.5861 40.0261L15.7381 39.2615C13.6123 38.3819 11.6224 37.0785 9.89925 35.3553C8.17606 33.6321 6.87269 31.6423 5.99314 29.5165L5.22852 27.6684L8.92465 26.1392ZM40.0258 27.6684L39.2612 29.5165C38.3817 31.6423 37.0783 33.6321 35.3551 35.3553C33.6319 37.0785 31.6421 38.3819 29.5163 39.2615L27.6682 40.0261L26.139 36.3299L27.987 35.5653C29.6355 34.8833 31.1818 33.8718 32.5267 32.5269C33.8716 31.182 34.883 29.6357 35.5651 27.9873L36.3297 26.1392L40.0258 27.6684Z" fill="white"/><circle cx="22.6274" cy="22.6274" r="5" fill="white"/></svg>') 23 23, pointer;
+            display: inline-block;
+            margin-top: auto;
+            width: 490px;
+            height: 4.5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 0.25rem solid #fff;
+            padding: 0.375rem 1.5rem;
+            color: #fff;
+            font-family: $font-jomhuria;
+            font-size: 4rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            transition: 0.5s ease;
+            transition-property: background-color;
+
+            &:hover {
+              background-color: rgba(250, 0, 0, 0.5);
+            }
+
+            &.login-twitch {
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              gap: 0.75rem;
+              background-color: rgba($color: #AD00FF, $alpha: 0.5);
+
+              svg {
+                width: 50px;
+                height: 50px;
+
+              }
+
+              span {
+                position: relative;
+                top: 0.375rem;
+              }
+
+              &:hover {
+                background-color: rgba($color: #AD00FF, $alpha: 1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #tip-fullscreen {
+      font-family: $font-sansation-light;
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      text-align: center;
+      color: rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+
+  // Rules page
+  &.rules-page {
+    cursor: url('data:image/svg+xml,<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1154 8.92489L17.2673 9.68952C15.6189 10.3716 14.0726 11.383 12.7277 12.7279C11.3828 14.0728 10.3713 15.6191 9.68927 17.2676L8.92465 19.1156L5.22852 17.5864L5.99314 15.7383C6.87269 13.6125 8.17606 11.6227 9.89925 9.8995C11.6224 8.17631 13.6123 6.87293 15.7381 5.99339L17.5861 5.22876L19.1154 8.92489ZM27.6682 5.22876L29.5163 5.99339C31.6421 6.87293 33.6319 8.17631 35.3551 9.8995C37.0783 11.6227 38.3817 13.6125 39.2612 15.7383L40.0258 17.5864L36.3297 19.1156L35.5651 17.2676C34.883 15.6191 33.8716 14.0728 32.5267 12.7279C31.1818 11.383 29.6355 10.3716 27.987 9.68952L26.139 8.92489L27.6682 5.22876ZM8.92465 26.1392L9.68927 27.9873C10.3713 29.6357 11.3828 31.182 12.7277 32.5269C14.0726 33.8718 15.6189 34.8833 17.2673 35.5653L19.1154 36.3299L17.5861 40.0261L15.7381 39.2615C13.6123 38.3819 11.6224 37.0785 9.89925 35.3553C8.17606 33.6321 6.87269 31.6423 5.99314 29.5165L5.22852 27.6684L8.92465 26.1392ZM40.0258 27.6684L39.2612 29.5165C38.3817 31.6423 37.0783 33.6321 35.3551 35.3553C33.6319 37.0785 31.6421 38.3819 29.5163 39.2615L27.6682 40.0261L26.139 36.3299L27.987 35.5653C29.6355 34.8833 31.1818 33.8718 32.5267 32.5269C33.8716 31.182 34.883 29.6357 35.5651 27.9873L36.3297 26.1392L40.0258 27.6684Z" fill="white"/><circle cx="22.6274" cy="22.6274" r="5" fill="white"/></svg>') 23 23, default;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: clamp(2rem, 9vh, 9.375rem) 2rem;
+
+    // Logo
+    #logo {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+
+    // Title
+    h1 {
+      color: #fff;
+      font-family: $font-jomhuria;
+      font-size: 16rem;
+      font-weight: 400;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    // All rules
+    #all-rules {
+      max-width: 1460px;
+
+      p {
+        color: #fff;
+        text-align: center;
+        font-family: $font-sansation-light;
+        font-size: 1.5rem;
+        font-weight: 300;
+
+        &:not(:last-of-type) {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    // Link return
+    #back-home {
+      display: inline-block;
+      margin-top: auto;
+      width: 490px;
+      height: 4.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 0.25rem solid #fff;
+      padding: 0.375rem 1.5rem;
+      color: #fff;
+      font-family: $font-jomhuria;
+      font-size: 4rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+
+  // Gameplay Screen (Game Playing...)
+  &.gameplay-screen {
+
+    // Bonus round screen
+    #bonus-round-screen {
+      cursor: url('data:image/svg+xml,<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1154 8.92489L17.2673 9.68952C15.6189 10.3716 14.0726 11.383 12.7277 12.7279C11.3828 14.0728 10.3713 15.6191 9.68927 17.2676L8.92465 19.1156L5.22852 17.5864L5.99314 15.7383C6.87269 13.6125 8.17606 11.6227 9.89925 9.8995C11.6224 8.17631 13.6123 6.87293 15.7381 5.99339L17.5861 5.22876L19.1154 8.92489ZM27.6682 5.22876L29.5163 5.99339C31.6421 6.87293 33.6319 8.17631 35.3551 9.8995C37.0783 11.6227 38.3817 13.6125 39.2612 15.7383L40.0258 17.5864L36.3297 19.1156L35.5651 17.2676C34.883 15.6191 33.8716 14.0728 32.5267 12.7279C31.1818 11.383 29.6355 10.3716 27.987 9.68952L26.139 8.92489L27.6682 5.22876ZM8.92465 26.1392L9.68927 27.9873C10.3713 29.6357 11.3828 31.182 12.7277 32.5269C14.0726 33.8718 15.6189 34.8833 17.2673 35.5653L19.1154 36.3299L17.5861 40.0261L15.7381 39.2615C13.6123 38.3819 11.6224 37.0785 9.89925 35.3553C8.17606 33.6321 6.87269 31.6423 5.99314 29.5165L5.22852 27.6684L8.92465 26.1392ZM40.0258 27.6684L39.2612 29.5165C38.3817 31.6423 37.0783 33.6321 35.3551 35.3553C33.6319 37.0785 31.6421 38.3819 29.5163 39.2615L27.6682 40.0261L26.139 36.3299L27.987 35.5653C29.6355 34.8833 31.1818 33.8718 32.5267 32.5269C33.8716 31.182 34.883 29.6357 35.5651 27.9873L36.3297 26.1392L40.0258 27.6684Z" fill="white"/><circle cx="22.6274" cy="22.6274" r="5" fill="white"/></svg>') 23 23, default;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      position: absolute;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      padding: clamp(2rem, 12vh, 25%) 2rem;
+      overflow: hidden;
+      background-image: linear-gradient(rgb(11, 1, 31), rgb(11, 1, 31));
+      /* background-image: radial-gradient(rgba(47, 4, 4, 0.4), rgba(47, 4, 4, 0)), linear-gradient(rgb(11, 1, 31), rgb(11, 1, 31)); */
+      background-repeat: no-repeat;
+      /* background-position: bottom 30vh right 20vw, center center; */
+      opacity: 1;
+      transition: 1s ease;
+      transition-property: opacity;
+      z-index: 9998;
+      #title-bonus {
+        color: #fff;
+        font-family: $font-jomhuria;
+        font-size: 16rem;
+        font-weight: 400;
+        line-height: 0.6;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      #all-bonus {
+        display: flex;
+        justify-content: center;
+        gap: 4rem clamp(8rem, 12vw, 300px);
+        flex-wrap: wrap;
+        .bonus {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 2.5rem;
+          .icon {
+            width: 128px;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+          }
+          span {
+            font-family: $font-sansation-light;
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            color: #fff;
+          }
+        }
+      }
+      #play-round {
+        display: inline-block;
+        width: 500px;
+        height: 4.5rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 0.25rem solid #fff;
+        padding: 0.375rem 1.5rem;
+        color: #fff;
+        font-family: $font-jomhuria;
+        font-size: 4rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.5);
+        }
+      }
+    }
+
+    // Countdown screen
+    #countdown-screen {
+      cursor: url('data:image/svg+xml,<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1154 8.92489L17.2673 9.68952C15.6189 10.3716 14.0726 11.383 12.7277 12.7279C11.3828 14.0728 10.3713 15.6191 9.68927 17.2676L8.92465 19.1156L5.22852 17.5864L5.99314 15.7383C6.87269 13.6125 8.17606 11.6227 9.89925 9.8995C11.6224 8.17631 13.6123 6.87293 15.7381 5.99339L17.5861 5.22876L19.1154 8.92489ZM27.6682 5.22876L29.5163 5.99339C31.6421 6.87293 33.6319 8.17631 35.3551 9.8995C37.0783 11.6227 38.3817 13.6125 39.2612 15.7383L40.0258 17.5864L36.3297 19.1156L35.5651 17.2676C34.883 15.6191 33.8716 14.0728 32.5267 12.7279C31.1818 11.383 29.6355 10.3716 27.987 9.68952L26.139 8.92489L27.6682 5.22876ZM8.92465 26.1392L9.68927 27.9873C10.3713 29.6357 11.3828 31.182 12.7277 32.5269C14.0726 33.8718 15.6189 34.8833 17.2673 35.5653L19.1154 36.3299L17.5861 40.0261L15.7381 39.2615C13.6123 38.3819 11.6224 37.0785 9.89925 35.3553C8.17606 33.6321 6.87269 31.6423 5.99314 29.5165L5.22852 27.6684L8.92465 26.1392ZM40.0258 27.6684L39.2612 29.5165C38.3817 31.6423 37.0783 33.6321 35.3551 35.3553C33.6319 37.0785 31.6421 38.3819 29.5163 39.2615L27.6682 40.0261L26.139 36.3299L27.987 35.5653C29.6355 34.8833 31.1818 33.8718 32.5267 32.5269C33.8716 31.182 34.883 29.6357 35.5651 27.9873L36.3297 26.1392L40.0258 27.6684Z" fill="white"/><circle cx="22.6274" cy="22.6274" r="5" fill="white"/></svg>') 23 23, default;
+      // display: none;
+      position: absolute;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-image: linear-gradient(rgb(11, 1, 31), rgb(11, 1, 31));
+      /* background-image: radial-gradient(rgba(47, 4, 4, 0.4), rgba(47, 4, 4, 0)), linear-gradient(rgb(11, 1, 31), rgb(11, 1, 31)); */
+      background-repeat: no-repeat;
+      /* background-position: bottom 30vh right 20vw, center center; */
+      opacity: 1;
+      transition: 1s ease;
+      transition-property: opacity;
+      z-index: 9998;
+
+      #countdown {
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        display: grid;
+        place-items: center;
+
+        // width: 150px;
+        // aspect-ratio: 1;
+        &__frame {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          translate: -50% -50%;
+          // width: 150px;
+          // aspect-ratio: 1;
+          filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.5));
+        }
+
+        &__count {
+          position: relative;
+          top: 2.5rem;
+          font-family: $font-jomhuria;
+          font-size: 16rem;
+          font-weight: 400;
+          text-align: center;
+          color: #fff;
+        }
+      }
+    }
+
+    // Finish screen
+    #finish-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      display: none;
+      position: absolute;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 2rem;
+      opacity: 1;
+      transition: 1s ease;
+      transition-property: opacity;
+      z-index: 5;
+
+      #title-game {
+        // position: absolute;
+        // top: 2rem;
+        // left: 50%;
+        // translate: -50%;
+        font-family: $font-jomhuria;
+        font-size: 8rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+      }
+
+      #recap-answer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(3rem, 6.666vw, 8rem);
+        height: 60vh;
+        width: 100%;
+        max-width: 1080px;
+
+        #poster-game {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          max-width: calc(50% - (clamp(3rem, 6.666vw, 8rem) / 2));
+
+          img {
+            height: 100%;
+            max-height: 100%;
+          }
+        }
+
+        #map-game {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          max-width: calc(50% - (clamp(3rem, 6.666vw, 8rem) / 2));
+          &__container{
+            --playerX: 30%;
+            --playerY: 60%;
+            --answerX: 56%;
+            --answerY: 34%;
+
+            position: relative;
+            height: fit-content;
+            img {
+              width: 100%;
+              max-height: 100%;
+            }
+            #ping-player{
+              position: absolute;
+              top: var(--playerY);
+              left: var(--playerX);
+              width: 20px;
+              height: 20px;
+              translate: -50% -50%;
+              background-color: red;
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 5;
+            }
+            #ping-answer{
+              position: absolute;
+              top: var(--answerY);
+              left: var(--answerX);
+              width: 20px;
+              height: 20px;
+              translate: -50% -50%;
+              background-color: blue;
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 5;
+            }
+            #distance{
+              position: absolute;
+              top: var(--playerY);
+              left: var(--playerX);
+              width: 170px;
+              height: 4px;
+              transform-origin: 0 2px;
+              transform: translateY(-50%) rotate(-42deg);
+              background: repeating-linear-gradient(90deg, #fff 0px, #fff 10px, #ffffff00 10px, #ffffff00 20px);
+              pointer-events: none;
+              z-index: 3;
+            }
+          }
+        }
+      }
+
+      #total-points-earned {
+        // position: absolute;
+        // bottom: 7.125rem;
+        // left: 50%;
+        // translate: -50%;
+        color: #fff;
+        font-family: $font-jomhuria;
+        font-size: 7rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+
+        #earned-points {}
+
+        #total-points {
+          font-size: 3rem;
+          color: rgba(255, 255, 255, 0.75);
+        }
+      }
+
+      #next-round {
+        // position: absolute;
+        // bottom: 2rem;
+        // left: 50%;
+        // translate: -50%;
+        display: inline-block;
+        width: 740px;
+        height: 4.5rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 0.25rem solid #fff;
+        padding: 0.375rem 1.5rem;
+        color: #fff;
+        font-family: $font-jomhuria;
+        font-size: 4rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+
+    // Canvas - Preview game
+    #preview-game {
+      cursor: url('data:image/svg+xml,<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1154 8.92489L17.2673 9.68952C15.6189 10.3716 14.0726 11.383 12.7277 12.7279C11.3828 14.0728 10.3713 15.6191 9.68927 17.2676L8.92465 19.1156L5.22852 17.5864L5.99314 15.7383C6.87269 13.6125 8.17606 11.6227 9.89925 9.8995C11.6224 8.17631 13.6123 6.87293 15.7381 5.99339L17.5861 5.22876L19.1154 8.92489ZM27.6682 5.22876L29.5163 5.99339C31.6421 6.87293 33.6319 8.17631 35.3551 9.8995C37.0783 11.6227 38.3817 13.6125 39.2612 15.7383L40.0258 17.5864L36.3297 19.1156L35.5651 17.2676C34.883 15.6191 33.8716 14.0728 32.5267 12.7279C31.1818 11.383 29.6355 10.3716 27.987 9.68952L26.139 8.92489L27.6682 5.22876ZM8.92465 26.1392L9.68927 27.9873C10.3713 29.6357 11.3828 31.182 12.7277 32.5269C14.0726 33.8718 15.6189 34.8833 17.2673 35.5653L19.1154 36.3299L17.5861 40.0261L15.7381 39.2615C13.6123 38.3819 11.6224 37.0785 9.89925 35.3553C8.17606 33.6321 6.87269 31.6423 5.99314 29.5165L5.22852 27.6684L8.92465 26.1392ZM40.0258 27.6684L39.2612 29.5165C38.3817 31.6423 37.0783 33.6321 35.3551 35.3553C33.6319 37.0785 31.6421 38.3819 29.5163 39.2615L27.6682 40.0261L26.139 36.3299L27.987 35.5653C29.6355 34.8833 31.1818 33.8718 32.5267 32.5269C33.8716 31.182 34.883 29.6357 35.5651 27.9873L36.3297 26.1392L40.0258 27.6684Z" fill="white"/><circle cx="22.6274" cy="22.6274" r="5" fill="white"/></svg>') 23 23, move;
+      position: absolute;
+      inset: 0;
+      // background: #ff000080;
+      width: 100vw;
+      height: 100vh;
+      // z-index: -1;
+      filter: brightness(0.75) contrast(2.25);
+    }
+
+    // Logo
+    #logo {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 10;
+      filter: drop-shadow(0 0 0.5rem rgba($color: #000, $alpha: 0.5));
+    }
+
+    // Timer
+    #timer {
+      --progress: 0%;
+      pointer-events: none;
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      translate: -50%;
+      display: grid;
+      place-items: center;
+      width: 150px;
+      aspect-ratio: 1;
+      filter: drop-shadow(0 0 0.5rem rgba($color: #000, $alpha: 0.5));
+      &__frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 150px;
+        aspect-ratio: 1;
+
+        #progress-timer-fill {
+          width: 100%;
+          height: 100%;
+          background: conic-gradient(#c80000 0% var(--progress), #fff var(--progress) 100%);
+        }
+      }
+
+      &__count {
+        position: relative;
+        top: 0.75rem;
+        font-family: $font-jomhuria;
+        font-size: 6rem;
+        font-weight: 400;
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    // Steps - Score
+    #steps-score {
+      pointer-events: none;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      text-align: right;
+      color: #fff;
+      z-index: 10;
+      filter: drop-shadow(0 0 0.5rem rgba($color: #000, $alpha: 0.5));
+      #steps,
+      #score {
+        &>span {
+          display: block;
+          font-family: $font-sansation-light;
+          font-size: 2rem;
+          font-weight: 300;
+        }
+
+        &__count {
+          display: block;
+          font-family: $font-jomhuria;
+          font-size: 6rem;
+          font-weight: 400;
+        }
+      }
+    }
+
+    // Lifes
+    #lifes {
+      pointer-events: none;
+      position: absolute;
+      bottom: calc(2rem + 1rem + 4.5rem);
+      left: 50%;
+      translate: -50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      // display: none;
+
+      .single-life {
+        display: inline-block;
+        width: 2rem;
+        aspect-ratio: 1;
+        background-color: #fff;
+        border: 0.25rem solid #fff;
+        transition: 1s ease;
+
+        &.lost {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+
+    // Guess
+    #guess {
+      // display: none;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      translate: -50%;
+
+      &__input {
+        display: inline-block;
+        width: 600px;
+        height: 4.5rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 0.25rem solid #fff;
+        padding: 0.75rem 1.5rem 0;
+        color: #fff;
+        font-family: $font-jomhuria;
+        font-size: 4rem;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+    #score-guess{
+      --top: 75%;
+      pointer-events: none;
+      position: absolute;
+      top: var(--top);
+      left: 50%;
+      translate: -50% -50%;
+      opacity: 0;
+      text-align: center;
+      font-family: $font-jomhuria;
+      font-weight: 400;
+      font-size: 6rem;
+      color: #fff;
+      &.reveal{
+        animation: revealScoreGuess 3s ease 0s 1 normal forwards;
+      }
+    }
+
+    @keyframes revealScoreGuess {
+      0%{
+        opacity: 1;
+        top: calc(var(--top) - 0px);
+      }
+      50%{
+        opacity: 1;
+        top: calc(var(--top) - 0px);
+      }
+      100%{
+        opacity: 0;
+        top: calc(var(--top) - 100px);
+      }
+    }
+
+    // Map
+    #map {
+      display: none;
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      width: 500px;
+      opacity: 0.5;
+      transition: 0.3s ease-out;
+      transition-property: width, opacity;
+
+      &__content {
+        position: relative;
+        width: 100%;
+        height: 350px;
+        border: 0.25rem solid #fff;
+        border-bottom: none;
+        transition: 0.3s ease-out;
+        overflow: hidden;
+
+        #map__container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          translate: -50% -50%;
+          width: fit-content;
+          height: fit-content;
+          #map__image {
+            pointer-events: none;
+          }
+
+          #map__ping {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            translate: -50% -50%;
+            background-color: red;
+            border-radius: 50%;
+            display: none;
+            pointer-events: none;
+          }
+        }
+      }
+
+      &__submit {
+        display: block;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 0.25rem solid #fff;
+        border-block-width: 0.25rem 0;
+        padding: 0 1.5rem 0;
+        color: #fff;
+        font-family: $font-jomhuria;
+        font-size: 4rem;
+        font-weight: 400;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s ease;
+        transition-property: width, height, background-color, border-block-width;
+
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.5);
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+        width: 760px;
+
+        #map__container {
+          height: 475px;
+        }
+
+        #map__submit {
+          height: 4.5rem;
+          padding: 0.375rem 1.5rem 0;
+          border-block-width: 0.25rem;
+        }
+      }
+    }
+  }
+
+  // Ending Screen (Game Finished)
+  &.ending-screen {
+    cursor: url('data:image/svg+xml,<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1154 8.92489L17.2673 9.68952C15.6189 10.3716 14.0726 11.383 12.7277 12.7279C11.3828 14.0728 10.3713 15.6191 9.68927 17.2676L8.92465 19.1156L5.22852 17.5864L5.99314 15.7383C6.87269 13.6125 8.17606 11.6227 9.89925 9.8995C11.6224 8.17631 13.6123 6.87293 15.7381 5.99339L17.5861 5.22876L19.1154 8.92489ZM27.6682 5.22876L29.5163 5.99339C31.6421 6.87293 33.6319 8.17631 35.3551 9.8995C37.0783 11.6227 38.3817 13.6125 39.2612 15.7383L40.0258 17.5864L36.3297 19.1156L35.5651 17.2676C34.883 15.6191 33.8716 14.0728 32.5267 12.7279C31.1818 11.383 29.6355 10.3716 27.987 9.68952L26.139 8.92489L27.6682 5.22876ZM8.92465 26.1392L9.68927 27.9873C10.3713 29.6357 11.3828 31.182 12.7277 32.5269C14.0726 33.8718 15.6189 34.8833 17.2673 35.5653L19.1154 36.3299L17.5861 40.0261L15.7381 39.2615C13.6123 38.3819 11.6224 37.0785 9.89925 35.3553C8.17606 33.6321 6.87269 31.6423 5.99314 29.5165L5.22852 27.6684L8.92465 26.1392ZM40.0258 27.6684L39.2612 29.5165C38.3817 31.6423 37.0783 33.6321 35.3551 35.3553C33.6319 37.0785 31.6421 38.3819 29.5163 39.2615L27.6682 40.0261L26.139 36.3299L27.987 35.5653C29.6355 34.8833 31.1818 33.8718 32.5267 32.5269C33.8716 31.182 34.883 29.6357 35.5651 27.9873L36.3297 26.1392L40.0258 27.6684Z" fill="white"/><circle cx="22.6274" cy="22.6274" r="5" fill="white"/></svg>') 23 23, default;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    padding-top: clamp(2rem, 9vh, 9rem);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('/img/bg-ending-screen.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: #000;
+      opacity: 0.75;
+      z-index: -1;
+    }
+
+    // Logo
+    #logo {
+      // position: absolute;
+      // top: 7rem;
+      // left: 50%;
+      // translate: -50%;
+      width: 180px;
+    }
+
+    // Global recap
+    #recap-global-game {
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // translate: -50% -50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      #score-final,
+      #games-found {
+        &>span {
+          display: block;
+          font-family: $font-sansation-light;
+          font-size: 2rem;
+          font-weight: 300;
+          text-align: center;
+          color: #fff;
+        }
+
+        .result {
+          color: #fff;
+          font-family: $font-jomhuria;
+          font-size: 7rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          text-align: center;
+
+          &__count {}
+
+          &__total {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.75);
+          }
+        }
+      }
+
+      #timeline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+
+        .round {
+          position: relative;
+          display: grid;
+          place-items: center;
+          width: 3.5rem;
+          height: 2.5rem;
+          padding: 0.75rem;
+          background-color: transparent;
+          font-family: $font-jomhuria;
+          font-size: 3rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          line-height: 0.55;
+          color: #fff;
+          text-align: center;
+
+          &.win {
+            background-color: #fff;
+            color: #000;
+          }
+
+          &:not(:last-of-type) {
+            &::before {
+              content: "";
+              display: block;
+              width: 0.125rem;
+              height: 3.125rem;
+              background-color: #fff;
+              position: absolute;
+              top: 50%;
+              right: -1.5rem;
+              translate: 50% -50%;
+            }
+          }
+        }
+      }
+    }
+
+    #back-home {
+      // position: absolute;
+      // bottom: 2rem;
+      // left: 50%;
+      // translate: -50%;
+      display: inline-block;
+      width: 740px;
+      height: 4.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 0.25rem solid #fff;
+      padding: 0.375rem 1.5rem;
+      color: #fff;
+      font-family: $font-jomhuria;
+      font-size: 4rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
